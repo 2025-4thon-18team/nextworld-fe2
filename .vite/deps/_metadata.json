@@ -2,7 +2,45 @@
   "hash": "79c20665",
   "configHash": "1055177e",
   "lockfileHash": "576677a5",
-  "browserHash": "bb8dcff4",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "41c93d47",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "7218526b",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "6b643133",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "ce87d8fc",
+      "needsInterop": true
+    },
+    "@locator/runtime": {
+      "src": "../../node_modules/@locator/runtime/dist/index.js",
+      "file": "@locator_runtime.js",
+      "fileHash": "227312fa",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-RCHWBKCQ": {
+      "file": "chunk-RCHWBKCQ.js"
+    },
+    "Runtime-67LBOESM": {
+      "file": "Runtime-67LBOESM.js"
+    },
+    "chunk-N3FJK2KC": {
+      "file": "chunk-N3FJK2KC.js"
+    },
+    "chunk-PLDDJCW6": {
+      "file": "chunk-PLDDJCW6.js"
+    }
+  }
 }

@@ -1,6 +1,8 @@
+// src/Router.tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter as ReactRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import HomePage from "@/pages/HomePage";
 import WorkPage from "@/pages/WorkPage";
 import WritingPage from "@/pages/work/WritingPage";
@@ -9,6 +11,7 @@ import ProfitPage from "@/pages/work/ProfitPage";
 import StoragePage from "@/pages/my/StoragePage";
 import ManagementPage from "@/pages/my/ManagementPage";
 import PointPage from "@/pages/my/PointPage";
+import ProfitboardPage from "@/pages/my/ProfitboardPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,30 +21,24 @@ const queryClient = new QueryClient({
     },
   },
 });
-declare global {
-  interface Window {
-    __TANSTACK_QUERY_CLIENT__: import("@tanstack/query-core").QueryClient;
-  }
-}
-
-// This code is for all users
-window.__TANSTACK_QUERY_CLIENT__ = queryClient;
 
 export function Router() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactRouter>
+      <BrowserRouter>
         <Routes>
-          <Route element={<HomePage />} path="/"></Route>
-          <Route element={<WorkPage />} path="/WorkPage"></Route>
-          <Route element={<WritingPage />} path="/WritingPage"></Route>
-          <Route element={<UniversePage />} path="/UniversePage"></Route>
-          <Route element={<ProfitPage />} path="/ProfitPage"></Route>
-          <Route element={<StoragePage />} path="/StoragePage"></Route>
-          <Route element={<ManagementPage />} path="/ManagementPage"></Route>
-          <Route element={<PointPage />} path="/PointPage"></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/WorkPage" element={<WorkPage />} />
+          <Route path="/WritingPage" element={<WritingPage />} />
+          <Route path="/UniversePage" element={<UniversePage />} />
+          <Route path="/ProfitPage" element={<ProfitPage />} />
+          <Route path="/StoragePage" element={<StoragePage />} />
+          <Route path="/ManagementPage" element={<ManagementPage />} />
+          <Route path="/PointPage" element={<PointPage />} />
+          <Route path="/ProfitboardPage" element={<ProfitboardPage />}/>
         </Routes>
-      </ReactRouter>
+      </BrowserRouter>
+
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

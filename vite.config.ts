@@ -24,7 +24,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src").replace(/\\/g, "/"),
+      "@": path.resolve(__dirname, "src"), // ✅ src 경로로 alias 설정
     },
   },
   build: {
